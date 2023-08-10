@@ -13,7 +13,7 @@ default_lambda_steps = 0.5
 def helper_text():
     print("\nUsage:\n\tpython possion.py [START_event] [END_event] [TARGET_event] [lambda_START_val] [lambda_END_val] [lambda_TARGET_val] <discrete_event_steps> <lambda_steps>")
     print("\n\t*Arguments enclosed using [ ] are required, and < > are optional")
-    print("\n\t*(START_event < TARGET_event >= END_event) and (lambda_START_val < lambda_TARGET_val >= lambda_END_val)")
+    print("\n\t*(START_event < TARGET_event <= END_event) and (lambda_START_val < lambda_TARGET_val <= lambda_END_val)")
     print("\nExample:\n\tpython possion.py 0 20 12 0 10 6.5       -> Setting six required args\n\tpython possion.py 0 20 12 0 10 6.5 1     -> Setting six required args + <discrete_event_steps>\n\tpython possion.py 0 20 12 0 10 6.5 1 0.5 -> Setting six required args + <discrete_event_steps> + <lambda_steps>")
     print("\nThese arguments require descrete (Int) values:\n\t[START_event]\n\t[END_event]\n\t[TARGET_event]")
     print("\nWhile these arguments require quantative (Int/float) values:\n\t[lambda_START_val]\n\t[lambda_END_val]\n\t[lambda_TARGET_val]\n\t<discrete_event_steps>\n\t<lambda_steps>")
