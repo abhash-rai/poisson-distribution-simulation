@@ -1,3 +1,11 @@
+# poisson-distribution-simulation
+
+<div align="center">
+    <img src="https://github.com/AbhashChamlingRai/poisson-distribution-simulation/assets/106548397/54de9410-2a77-4f87-819f-eb1d426b1446" alt="simulation_run">
+</div>
+
+<br>
+
 # Prerequisites
 
 - You must have `Python 3` installed on your system.
