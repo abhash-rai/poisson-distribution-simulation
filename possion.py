@@ -229,8 +229,21 @@ def main():
                 slider_discrete_event_steps = float(sys.argv[7])
                 slider_lambda_steps = float(sys.argv[8])
 
-    Possion = PossionDistributionFunctions(discrete_START_event, discrete_END_event, discrete_TARGET_event, lambda_START_value, lambda_END_value, lambda_TARGET_value, slider_discrete_event_steps, slider_lambda_steps)
-    Possion.starter()
+    # Checking if START_event < TARGET_event <= END_event
+    if discrete_START_event < discrete_TARGET_event <= discrete_END_event:
+
+        # Checking if lambda_START_val < lambda_TARGET_val <= lambda_END_val
+        if lambda_START_value < lambda_TARGET_value <= lambda_END_value:
+            Possion = PossionDistributionFunctions(discrete_START_event, discrete_END_event, discrete_TARGET_event, lambda_START_value, lambda_END_value, lambda_TARGET_value, slider_discrete_event_steps, slider_lambda_steps)
+            Possion.starter()
+
+        else:
+            print("\n'START_event' should be less than 'TARGET_event', and 'TARGET_event' should be less than or equals to 'END_event'\nRun 'python possion.py' to get help.")
+
+    else:
+        print("\n'lambda_START_val' should be less than 'lambda_TARGET_val', and 'lambda_TARGET_val' should be less than or equals to 'lambda_END_val'\nRun 'python possion.py' to get help.")
+
+    
 
 if __name__ == "__main__":
     main()
