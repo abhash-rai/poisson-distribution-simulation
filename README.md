@@ -29,7 +29,7 @@
 
 # Usage
 
-## Running the script
+## Running the script:
 
 ```
 python poisson.py [START_event] [END_event] [TARGET_event] [lambda_START_val] [lambda_END_val] [lambda_TARGET_val] <discrete_event_steps> <lambda_steps>
