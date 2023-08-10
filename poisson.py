@@ -11,17 +11,17 @@ default_lambda_steps = 0.5
 
 
 def helper_text():
-    print("\nUsage:\n\tpython possion.py [START_event] [END_event] [TARGET_event] [lambda_START_val] [lambda_END_val] [lambda_TARGET_val] <discrete_event_steps> <lambda_steps>")
+    print("\nUsage:\n\tpython poisson.py [START_event] [END_event] [TARGET_event] [lambda_START_val] [lambda_END_val] [lambda_TARGET_val] <discrete_event_steps> <lambda_steps>")
     print("\n\t*Arguments enclosed using [ ] are required, and < > are optional")
     print("\n\t*(START_event < TARGET_event <= END_event) and (lambda_START_val < lambda_TARGET_val <= lambda_END_val)")
-    print("\nExample:\n\tpython possion.py 0 20 12 0 10 6.5       -> Setting six required args\n\tpython possion.py 0 20 12 0 10 6.5 1     -> Setting six required args + <discrete_event_steps>\n\tpython possion.py 0 20 12 0 10 6.5 1 0.5 -> Setting six required args + <discrete_event_steps> + <lambda_steps>")
+    print("\nExample:\n\tpython poisson.py 0 20 12 0 10 6.5       -> Setting six required args\n\tpython poisson.py 0 20 12 0 10 6.5 1     -> Setting six required args + <discrete_event_steps>\n\tpython poisson.py 0 20 12 0 10 6.5 1 0.5 -> Setting six required args + <discrete_event_steps> + <lambda_steps>")
     print("\nThese arguments require descrete (Int) values:\n\t[START_event]\n\t[END_event]\n\t[TARGET_event]")
     print("\nWhile these arguments require quantative (Int/float) values:\n\t[lambda_START_val]\n\t[lambda_END_val]\n\t[lambda_TARGET_val]\n\t<discrete_event_steps>\n\t<lambda_steps>")
     print()
 
 
 
-class PossionDistributionFunctions:        
+class PoissonDistributionFunctions:        
     
     def __init__(self, descrete_START_event, descrete_END_event, descrete_TARGET_event, labmda_START_value, labmda_END_value, labmda_TARGET_value, slider_descrete_event_steps=default_event_steps, slider_labda_steps=default_lambda_steps):
         self.__descrete_START_event = descrete_START_event
@@ -220,7 +220,7 @@ def main():
         slider_lambda_steps = default_lambda_steps
     else:
         if len(sys.argv) > 9:
-            print("\nGiven number of arguments is greater than expected number of arguments.\nPlease run 'possion.py' for help!\n")
+            print("\nGiven number of arguments is greater than expected number of arguments.\nPlease run 'poisson.py' for help!\n")
         else:
             if len(sys.argv) == 8:
                 slider_discrete_event_steps = float(sys.argv[7])
@@ -234,14 +234,14 @@ def main():
 
         # Checking if lambda_START_val < lambda_TARGET_val <= lambda_END_val
         if lambda_START_value < lambda_TARGET_value <= lambda_END_value:
-            Possion = PossionDistributionFunctions(discrete_START_event, discrete_END_event, discrete_TARGET_event, lambda_START_value, lambda_END_value, lambda_TARGET_value, slider_discrete_event_steps, slider_lambda_steps)
-            Possion.starter()
+            poisson = PoissonDistributionFunctions(discrete_START_event, discrete_END_event, discrete_TARGET_event, lambda_START_value, lambda_END_value, lambda_TARGET_value, slider_discrete_event_steps, slider_lambda_steps)
+            poisson.starter()
 
         else:
-            print("\n'START_event' should be less than 'TARGET_event', and 'TARGET_event' should be less than or equals to 'END_event'\nRun 'python possion.py' to get help.")
+            print("\n'START_event' should be less than 'TARGET_event', and 'TARGET_event' should be less than or equals to 'END_event'\nRun 'python poisson.py' to get help.")
 
     else:
-        print("\n'lambda_START_val' should be less than 'lambda_TARGET_val', and 'lambda_TARGET_val' should be less than or equals to 'lambda_END_val'\nRun 'python possion.py' to get help.")
+        print("\n'lambda_START_val' should be less than 'lambda_TARGET_val', and 'lambda_TARGET_val' should be less than or equals to 'lambda_END_val'\nRun 'python poisson.py' to get help.")
 
     
 
